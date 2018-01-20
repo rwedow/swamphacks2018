@@ -3,13 +3,13 @@ const React = require('react');
 const styles = require('./style.css')
 
 class Button extends React.Component {
-  handleClick() {
-    console.log('this is: ', this);
+  constructor(props) {
+    super(props);
   }
   
   render() {
     return (
-      <button className="homebutton" onClick={(e) => this.handleClick(e)}>
+      <button className="homebutton" onClick={(e) => this.props.onClick(e)}>
       {this.props.text}
       </button>
     );
