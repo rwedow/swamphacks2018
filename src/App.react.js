@@ -1,9 +1,11 @@
 const React = require('react');
 const CoursesViewContainer = require('./components/CoursesViewContainer.react');
 const firebase = require('firebase');
+const firebaseui = require('firebaseui');
 const NavBar = require('./components/NavBar.react');
 const Home = require('./components/Home.react');
 const FirebaseTest = require('./components/FirebaseTest.react');
+const CoursesView = require('./components/CoursesView.react');
 
 const styles = require('./components/style.css');
 
@@ -11,7 +13,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { location: 'home'};
+    this.state = { location: 'courses_view'};
   }
 
 
@@ -23,6 +25,9 @@ class App extends React.Component {
         );
       case 'courses_view_container':
       case 'courses_view':
+        return (
+          <CoursesView {...this.props}/>
+        );
       case 'course_view_container':
       case 'course_view':
       case 'courses_view_number':
@@ -48,8 +53,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <NavBar {...this.props} />
-        { this.renderContent() }
+        <NavBar />
+        {/*{ this.renderContent() }-->*/}
+        <CoursesView />
       </div>
 
     );
