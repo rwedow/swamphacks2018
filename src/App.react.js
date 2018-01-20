@@ -21,10 +21,9 @@ class App extends React.Component {
   }
 
   render() {
-    console.log("hey there");
     return (
       <div>
-        <NavBar />
+        <NavBar {...this.props} />
         { this.renderContent() }
       </div>
     );

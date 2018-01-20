@@ -6,7 +6,6 @@ class Home extends React.Component {
     }
 
     render() {
-      console.log("here");
       return (
         <div>
           <h1> NAME OF SITE </h1>
