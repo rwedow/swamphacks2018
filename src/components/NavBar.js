@@ -4,11 +4,9 @@ const Button = require('./Button');
 const styles = require('./style.css')
 
 class NavBar extends React.Component {
-    state = { homepage: true }
-
     constructor(props) {
-      // this.state = { homepage: true }
       super(props);
+      this.state = { homepage: true };
     }
 
     render() {
