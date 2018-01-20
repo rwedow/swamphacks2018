@@ -1,10 +1,9 @@
 const React = require('react');
-
 const NavBar = require('./components/NavBar.react');
 const Home = require('./components/Home.react');
 const CoursesViewContainer = require('./components/CoursesViewContainer.react');
 
-const styles = require('./styles.css');
+const styles = require('./components/style.css');
 
 class App extends React.Component {
   constructor(props) {

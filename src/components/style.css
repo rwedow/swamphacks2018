@@ -1,12 +1,51 @@
-.primary {
-  color: 'green';
-}
-
 nav {
   background-color:rgb(255,255,255);
 	overflow: hidden;
-	padding: 1em;
+	padding: 0;
   background: transparent;
+}
+
+h1 {
+  font-size: 16vw; /*200px;*/
+  line-height: .7;
+  align-content: center;
+  margin: 0;
+}
+
+p {
+  font-family: 'Futura';
+  font-size: 24px;
+  background-color: FFFFFF#;
+  margin-left: 80px;
+}
+
+span {
+  background-color: #A5B452;
+  height: 60px;
+  color: #FFF;
+  opacity: .5;
+}
+
+.webHeader {
+  display: flex;
+  height: 50%;
+}
+
+.bigTitle {
+  font-family: 'Times New Roman';
+  width: 100%;
+  height: 50%;
+  margin: auto;
+  margin-top: 30px;
+  margin-left: 25px;
+}
+
+.subTitle {
+  width: 100%;
+  height: 100px; /* Or whatever */
+  margin: auto;
+  margin-top: 0;
+  margin-left: 25px;
 }
 
 .navWide {
@@ -15,11 +54,18 @@ nav {
 
 .leftbutton {
   float: left;
+  margin: 5px;
 }
 
 .rightbutton {
   float: right;
   margin: 5px;
+}
+
+.centerButton {
+  width: 100%;
+  margin: auto;
+  justify-content: center;
 }
 
 .homebutton {
