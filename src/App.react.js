@@ -1,6 +1,8 @@
 const React = require('react');
 const NavBar = require('./components/NavBar')
 
+const styles = require('./styles.css')
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -9,7 +11,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <h1 className="primary">Hello World!</h1>
       </div>
     );
   }
