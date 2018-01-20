@@ -6,10 +6,17 @@ class Home extends React.Component {
     }
 
     render() {
-      console.log("here");
+      document.title = "Home";
       return (
         <div>
-          <h1> NAME OF SITE </h1>
+          <div className="webHeader">
+            <div className="bigTitle">
+              <h1>Get to know your finances</h1>
+            </div>
+          </div>
+          <div className="subTitle">
+            <p>This is where we talk about the quiz and Luke will fill it in later. Wallet and cash interest and money.</p>
+          </div>
         </div>
       );
     }
