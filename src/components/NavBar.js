@@ -1,10 +1,9 @@
 const React = require('react');
 
 class NavBar extends React.Component {
-    state = { homepage: true }
-
     constructor(props) {
       super(props);
+      this.state = { homepage: true };
     }
 
     render() {
