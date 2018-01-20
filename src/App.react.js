@@ -1,12 +1,12 @@
 const React = require('react');
 const NavBar = require('./components/NavBar')
-
+const Home = require('./components/Home.react')
 const styles = require('./styles.css')
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { location: '' };
+    this.state = { location: 'home' };
   }
 
   renderContent() {
@@ -19,8 +19,10 @@ class App extends React.Component {
   }
 
   render() {
+    console.log("hey there");
     return (
       <div>
+        <NavBar />
         { this.renderContent() }
       </div>
     );

@@ -1,3 +1,39 @@
 .primary {
   color: 'green';
 }
+
+nav {
+  background-color:rgb(255,255,255);
+	overflow: hidden;
+	padding: 1em;
+  background: transparent;
+}
+
+.navWide {
+  margin: 0 auto;
+}
+
+.leftbutton {
+  float: left;
+}
+
+.rightbutton {
+  float: right;
+  margin: 5px;
+}
+
+.homebutton {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border-color: black;
+  border-radius: 10px;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  font-family: "Futura";
+  font-size: 26px;
+}
+
+.signinbutton {
+
+}

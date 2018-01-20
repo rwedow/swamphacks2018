@@ -6,10 +6,11 @@ class Home extends React.Component {
     }
 
     render() {
+      console.log("here");
       return (
-        <nav >
-          <a href='#'>Hello</a>
-        </nav>
+        <div>
+          <h1> NAME OF SITE </h1>
+        </div>
       );
     }
 }
