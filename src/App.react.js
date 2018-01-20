@@ -12,6 +12,7 @@ class App extends React.Component {
     return (
       <div>
         <h1 className="primary">Hello World!</h1>
+        <NavBar />
       </div>
     );
   }

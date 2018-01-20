@@ -12,14 +12,6 @@ class NavBar extends React.Component {
         </nav>
       );
     }
-  }
+}
 
-  const styles = {
-    navStyle: {
-      backgroundColor: 'red',
-      padding: 0,
-      background: 'transparent'
-    }
-  };
-  
-  module.exports = NavBar;
+module.exports = NavBar;
