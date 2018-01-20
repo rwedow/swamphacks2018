@@ -6,13 +6,22 @@ const styles = require('./styles.css')
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { location: '' };
+  }
+
+  renderContent() {
+    switch (this.state.location){
+      case 'home':
+      return (
+        <Home />
+      );
+    }
   }
 
   render() {
     return (
       <div>
-        <h1 className="primary">Hello World!</h1>
-        <NavBar />
+        { this.renderContent() }
       </div>
     );
   }
