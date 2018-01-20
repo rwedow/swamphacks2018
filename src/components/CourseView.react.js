@@ -1,12 +1,15 @@
 const React = require('react');
 
 const CourseInfoView = require('./CourseInfoView.react');
+<<<<<<< HEAD
 const CourseReadingView = require('./CourseReadingView.react');
 const CourseQuizView = require('./CourseQuizView.react');
 
 const INFO_VIEW = 'INFO_VIEW';
 const READING_VIEW = 'READING_VIEW';
 const QUIZ_VIEW = 'QUIZ_VIEW';
+=======
+>>>>>>> ff08ea622e8b1b5aa9c5d77f7701114ee194cce9
 
 class CourseView extends React.Component {
   constructor(props) {
