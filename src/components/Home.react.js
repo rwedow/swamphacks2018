@@ -10,6 +10,13 @@ class Home extends React.Component {
       console.log('this is', this);
     }
 
+    learnButtonOnClick() {
+      console.log('this is', this);
+      document.querySelector('.learn').scrollIntoView({ 
+        behavior: 'smooth' 
+      });
+    }
+    
     render() {
       document.title = "Home";
       return (
@@ -23,7 +30,10 @@ class Home extends React.Component {
             <p>This is where we talk about the quiz and Luke will fill it in later. Wallet and cash interest and money.</p>
           </div>
           <div /*className="centerButton"*/>
-            <Button text="Take the Quiz" style="centerbutton" onClick={this.buttonOnClick} />
+            <Button text="Take the Quiz" style="centerbutton" onClick={this.learnButtonOnClick} />
+          </div>
+          <div id="end" className="learn">
+            <h1>Hello</h1>
           </div>
         </div>
       );
