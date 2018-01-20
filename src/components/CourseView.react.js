@@ -1,6 +1,7 @@
 const React = require('react');
 
 const CourseInfoView = require('./CourseInfoView.react');
+
 const CourseReadingView = require('./CourseReadingView.react');
 const CourseQuizView = require('./CourseQuizView.react');
 
@@ -8,9 +9,11 @@ const INFO_VIEW = 'INFO_VIEW';
 const READING_VIEW = 'READING_VIEW';
 const QUIZ_VIEW = 'QUIZ_VIEW';
 
+
 class CourseView extends React.Component {
   constructor(props) {
     super(props);
+
   }
 
   renderView() {
@@ -28,6 +31,7 @@ class CourseView extends React.Component {
         return <CourseQuizView {...this.props} />;
       default:
         return <CourseInfoView {...this.props} />;
+
     }
   }
 

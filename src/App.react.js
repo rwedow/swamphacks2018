@@ -1,14 +1,19 @@
 const React = require('react');
+const CoursesViewContainer = require('./components/CoursesViewContainer.react');
+const firebase = require('firebase');
 const NavBar = require('./components/NavBar.react');
 const Home = require('./components/Home.react');
-const CoursesViewContainer = require('./components/CoursesViewContainer.react');
+const FirebaseTest = require('./components/FirebaseTest.react');
 
 const styles = require('./components/style.css');
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = { location: 'home'};
   }
+
 
   renderContent() {
     switch (this.props.store.getState()['location']){
@@ -33,6 +38,10 @@ class App extends React.Component {
         return (
           <CoursesViewContainer {...this.props} />
         );
+      case 'firebaseTest':
+      return (
+          <FirebaseTest />
+        );
     }
   }
 
@@ -42,6 +51,7 @@ class App extends React.Component {
         <NavBar {...this.props} />
         { this.renderContent() }
       </div>
+
     );
   }
 }
