@@ -1,12 +1,36 @@
-.primary {
-  color: 'green';
-}
-
 nav {
   background-color:rgb(255,255,255);
 	overflow: hidden;
-	padding: 1em;
+	padding: 0;
   background: transparent;
+}
+
+h1 {
+  font-size: 200px;
+  align-content: center;
+  margin: 0;
+}
+
+.webHeader {
+  display: flex;
+  height: 300px;
+}
+
+.bigTitle {
+  font-family: 'Times New Roman';
+  width: 100%;  /* Or whatever */
+  height: 800px; /* Or whatever */
+  margin: auto;
+  margin-top: 0;
+  margin-left: 25px;
+}
+
+.subTitle {
+  width: 100%;
+  height: 100px; /* Or whatever */
+  margin: auto;
+  margin-top: 0;
+  margin-left: 25px;
 }
 
 .navWide {
@@ -14,6 +38,7 @@ nav {
 }
 
 .leftbutton {
+  margin: 5px;
   float: left;
 }
 

@@ -1,9 +1,7 @@
 const React = require('react');
-
 const NavBar = require('./components/NavBar.react');
 const Home = require('./components/Home.react');
-
-const styles = require('./styles.css');
+const styles = require('./components/style.css');
 
 class App extends React.Component {
   constructor(props) {
@@ -21,7 +19,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log("hey there");
     return (
       <div>
         <NavBar />
