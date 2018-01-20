@@ -7,7 +7,7 @@ class NavBar extends React.Component {
   
     render() {
       return (
-        <nav style={styles.navStyle}>
+        <nav>
           <a href='#'>Hello</a>
         </nav>
       );
