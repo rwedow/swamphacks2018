@@ -66,6 +66,17 @@ span {
   width: 100%;
   margin: auto;
   justify-content: center;
+  background-color: transparent;
+  background: none;
+  border: none; 
+  background-repeat:no-repeat;
+  /* border-color: black;
+  border-radius: 10px; */
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  font-family: "Futura";
+  font-size: 26px;
 }
 
 .homebutton {

@@ -19,13 +19,13 @@ class NavBar extends React.Component {
         <nav>
           <div className="navWide">
             <div className="leftbutton">
-              <Button text="FinEd" {...this.props} onClick={this.buttonOnClick} />
+              <Button text="FinEd" style="homebutton" {...this.props} onClick={this.buttonOnClick} />
             </div>
             <div className="rightbutton">
-              <Button text="Sign Out" {...this.props} onClick={this.buttonOnClick} />
+              <Button text="Sign Out" style="homebutton" {...this.props} onClick={this.buttonOnClick} />
             </div>
             <div className="rightbutton">
-              <Button text="Sign In" {...this.props} onClick={this.buttonOnClick} />
+              <Button style="homebutton" text="Sign In" {...this.props} onClick={this.buttonOnClick} />
             </div>
           </div>
         </nav>

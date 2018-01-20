@@ -22,8 +22,8 @@ class Home extends React.Component {
           <div className="subTitle">
             <p>This is where we talk about the quiz and Luke will fill it in later. Wallet and cash interest and money.</p>
           </div>
-          <div className="centerButton">
-            <Button text="Take the Quiz" onClick={this.buttonOnClick} />
+          <div /*className="centerButton"*/>
+            <Button text="Take the Quiz" style="centerbutton" onClick={this.buttonOnClick} />
           </div>
         </div>
       );
