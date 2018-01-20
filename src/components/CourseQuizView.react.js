@@ -9,13 +9,24 @@ const STATUS_CONTAINER = 'StatusContainer';
 class CourseQuizView extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {curView: STATUS_CONTAINER};
+  }
+
+  renderView() {
+    switch(this.props.store.getState()['location']) {
+      case 'course_quiz_question_container':
+      case 'course_quiz_question_view':
+        return <CourseQuizQuestionContainer {...this.props} />;
+      case 'course_quiz_status_container':
+      case 'course_quiz_start_view':
+      case 'course_quiz_final_screen':
+        return <CourseQuizStatusContainer {...this.props} />;
+    }
   }
 
   render() {
     return (
       <div>
-        <span />;
+        {this.renderView()}
       </div>
     );
   }

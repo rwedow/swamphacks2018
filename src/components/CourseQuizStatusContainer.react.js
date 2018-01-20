@@ -8,10 +8,21 @@ class CourseQuizStatusContainer extends React.Component {
     super(props);
   }
 
+  renderView() {
+    switch(this.props.store.getState()['location']) {
+      case 'course_quiz_start_view':
+        return <CourseQuizStartView {...this.props} />;
+      case 'course_quiz_final_view':
+        return <CourseQuizFinalView {...this.props} />;
+      default:
+        return <span />;
+    }
+  }
+
   render() {
     return (
       <div>
-        <span />
+        {this.renderView()}
       </div>
     );
   }

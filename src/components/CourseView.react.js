@@ -1,55 +1,40 @@
 const React = require('react');
 
 const CourseInfoView = require('./CourseInfoView.react');
-<<<<<<< HEAD
 const CourseReadingView = require('./CourseReadingView.react');
 const CourseQuizView = require('./CourseQuizView.react');
 
 const INFO_VIEW = 'INFO_VIEW';
 const READING_VIEW = 'READING_VIEW';
 const QUIZ_VIEW = 'QUIZ_VIEW';
-=======
->>>>>>> ff08ea622e8b1b5aa9c5d77f7701114ee194cce9
 
 class CourseView extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {curView: INFO_VIEW};
-  }
-
-  setNewView(newView) {
-    switch(newView) {
-      case INFO_VIEW:
-        this.setState({curView: newView});
-        break;
-      case READING_VIEW:
-        this.setState({curView: newView});
-        break;
-      case QUIZ_VIEW:
-        this.setState({curView: newView});
-        break;
-      default:
-        this.setState({curView: INFO_VIEW});
-    }
   }
 
   renderView() {
-    switch(this.state.curView) {
-      case INFO_VIEW:
-        return <CourseInfoView {...props} />;
-      case READING_VIEW:
-        return <CourseReadingView {...props} />;
-      case QUIZ_VIEW:
-        return <CourseQuizView {...props} />;
+    switch(this.props.store.getState()['location']) {
+      case 'course_info_view':
+        return <CourseInfoView {...this.props} />;
+      case 'course_reading_view':
+        return <CourseReadingView {...this.props} />;
+      case 'course_quiz_view':
+      case 'course_quiz_question_container':
+      case 'course_quiz_question_view':
+      case 'course_quiz_status_container':
+      case 'course_quiz_start_view':
+      case 'course_quiz_final_screen':
+        return <CourseQuizView {...this.props} />;
       default:
-        return <CourseInfoView {...props} />;
+        return <CourseInfoView {...this.props} />;
     }
   }
 
   render() {
     return (
       <div>
-        <CourseInfoView {...props} />
+        {this.renderView()}
       </div>
     );
   }
