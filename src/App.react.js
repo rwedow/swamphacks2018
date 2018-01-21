@@ -3,24 +3,29 @@ const NavBar = require('./components/NavBar.react');
 const Home = require('./components/Home.react');
 const CoursesView= require('./components/CoursesView.react');
 
+const ActionTypes = require('./ActionTypes');
+
 const styles = require('./components/style.css');
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {"a": 1};
   }
 
   callAction(action, course) {
     console.log('hey here', this.props.store);
-    console.log(action, typeof action);
     this.props.store.dispatch({type: action, course: course});
+    let oppa = this.state.a ? 0 : 1;
+    this.setState({"a": oppa});
   }
 
   renderContent() {
+    console.log('load app.react', this.props.store.getState());
     switch (this.props.store.getState()['container']){
       case 'home':
         return (
-          <Home {...this.props} />
+          <Home {...this.props} callAction={this.callAction.bind(this)} />
         );
       case 'courses_view':
       case 'course_view':
@@ -31,7 +36,7 @@ class App extends React.Component {
       case 'course_quiz_view':
       case 'course_quiz_question_view':
         return (
-          <CoursesView {...this.props} />
+          <CoursesView {...this.props} callAction={this.callAction.bind(this)} />
         );
     }
   }
@@ -39,9 +44,13 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <NavBar {...this.props} />
-        {/* { this.renderContent() } */}
-        <CoursesView callAction={this.callAction.bind(this)} {...this.props} />
+        <NavBar {...this.props} callAction={this.callAction.bind(this)} />
+        { this.renderContent() }
+        {/* <CoursesView callAction={this.callAction.bind(this)} {...this.props} /> */}
+        {/* <button
+          onClick={() => {
+            console.log(ActionTypes.COURSE_INFO_VIEW); this.callAction(ActionTypes.COURSE_INFO_VIEW, 'dasjhaskkj')}}
+        >hey there</button> */}
       </div>
     );
   }

@@ -1,6 +1,6 @@
 const React = require('react');
 
-const CourseQuizQuestionView = require('./CourseQuizQuestionViewer.react');
+const CourseQuizQuestionViewer = require('./CourseQuizQuestionViewer.react');
 
 class CourseQuizView extends React.Component {
   constructor(props) {
@@ -15,6 +15,7 @@ class CourseQuizView extends React.Component {
   render() {
     return (
       <div>
+        <p>Quiz view</p>
         {this.renderView()}
       </div>
     );

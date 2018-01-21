@@ -1,6 +1,8 @@
 const React = require('react');
 const Button = require('./Button.react');
 
+const ActionTypes = require('../ActionTypes');
+
 class Home extends React.Component {
     constructor(props) {
       super(props);
@@ -24,7 +26,7 @@ class Home extends React.Component {
           </div>
 
           <div className="centerButton">
-            <Button text="Take the Quiz" style="centerButton" onClick={this.buttonOnClick} />
+            <Button text="Take the Quiz" style="centerButton" onClick={() => {this.props.callAction(ActionTypes.COURSE_QUIZ_VIEW, "some_course")}} />
           </div>
           
           <div className="discreteButton">

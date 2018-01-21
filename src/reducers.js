@@ -1,29 +1,20 @@
 const actionTypes = require('./ActionTypes');
 
-export default (state = {}, action) => {
-  console.log('wut wut got here');
+default_state = {container: 'home', course: 'none'};
+
+module.exports = (state = default_state, action) => {
   let copy = Object.assign({}, state);
   console.log('1', copy);
   let container = copy['container'] ? copy['container'] : 'home';
-  console.log('2');
   let course = copy['course'] ? copy['course'] : 'none';
-  console.log(container, course);
-  
-  console.log('action', action);
   Object.keys(actionTypes).forEach((key) => {
-    console.log(actionTypes[key].type, action.type.type);
     if (actionTypes[key].type === action.type.type) {
-      console.log('got here');
-      console.log('  ', action.type.type, action.course);
-      copy = Object.assign(copy, {container: action.type.type, course: action.course});
-      console.log(copy);
-      return copy;
-      // return {...state, container: action.type.type.text, course: action.course};
-    } else {
-      console.log('   no match', typeof actionTypes[key].type, action.type.type);
+      // console.log('got match', actionTypes[key], action.course);
+      copy = Object.assign(copy, {container: actionTypes[key].text, course: action.course});
     }
   });
-  return state;
+  return copy;
+  // return {container: 'thing', course: 'wowwowow'}; // state;
   // TODO: This
   // if (action.type === INCREMENT.type) {
   //   return Object.assign(copy, {"a": val + 1});

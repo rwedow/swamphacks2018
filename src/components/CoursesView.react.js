@@ -20,6 +20,7 @@ class CoursesView extends React.Component {
   }
 
   renderCoursesView() {
+    console.log('renderCoursesView', this.props.store.getState()['container']);
     switch (this.props.store.getState()['container']) {
       case 'courses_list_view':
         return this.renderCoursesList();
@@ -28,6 +29,7 @@ class CoursesView extends React.Component {
       case 'course_reading_view':
       case 'course_quiz_view':
       case 'course_quiz_question_view':
+        console.log('got courseview');
         return <CourseView {...this.props} />;
       default:
         return <span />;
@@ -40,10 +42,17 @@ class CoursesView extends React.Component {
         <p>CoursesView</p>
         <CoursesViewNavBar {...this.props} />
         {this.renderCoursesView()}
-        <button
-          onClick={() => {
-            console.log(ActionTypes.COURSE_INFO_VIEW); this.props.callAction(ActionTypes.COURSE_INFO_VIEW, 'dasjhaskkj')}}
-        >hey there</button>
+        <div>
+        <button onClick={() => {this.props.callAction(ActionTypes.COURSE_INFO_VIEW, 'some_course')}}>
+          Go to course info view
+        </button>
+        <button onClick={() => {this.props.callAction(ActionTypes.COURSE_READING_VIEW, 'some_course')}}>
+          Go to course reading view
+        </button>
+        <button onClick={() => {this.props.callAction(ActionTypes.COURSE_QUIZ_VIEW, 'some_course')}}>
+          Go to course quiz view
+        </button>
+        </div>
       </div>
     );
   }
