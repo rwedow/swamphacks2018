@@ -8,7 +8,8 @@ class CourseInfoView extends React.Component {
   render() {
     return (
       <div>
-        <span />;
+        <p>Info place</p>
+        <span />
       </div>
     );
   }

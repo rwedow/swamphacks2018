@@ -1,5 +1,7 @@
 const React = require('react');
 
+const ActionTypes = require('../ActionTypes');
+
 class NavBar extends React.Component {
     constructor(props) {
       super(props);
@@ -9,7 +11,7 @@ class NavBar extends React.Component {
     render() {
       return (
         <nav >
-          <a href='#'>Hello</a>
+          <a href='#' onClick={() => {this.props.callAction(HOME, "some_course")}}>Hello</a>
         </nav>
       );
     }

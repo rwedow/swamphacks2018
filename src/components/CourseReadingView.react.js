@@ -8,7 +8,8 @@ class CourseReadingView extends React.Component {
   render() {
     return (
       <div>
-        <span />;
+        <p>Reading View</p>
+        <span />
       </div>
     );
   }

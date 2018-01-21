@@ -5,11 +5,6 @@ const CourseInfoView = require('./CourseInfoView.react');
 const CourseReadingView = require('./CourseReadingView.react');
 const CourseQuizView = require('./CourseQuizView.react');
 
-const INFO_VIEW = 'INFO_VIEW';
-const READING_VIEW = 'READING_VIEW';
-const QUIZ_VIEW = 'QUIZ_VIEW';
-
-
 class CourseView extends React.Component {
   constructor(props) {
     super(props);
@@ -17,17 +12,16 @@ class CourseView extends React.Component {
   }
 
   renderView() {
-    switch(this.props.store.getState()['location']) {
+    switch(this.props.store.getState()['container']) {
       case 'course_info_view':
+        console.log('here got to info view');
         return <CourseInfoView {...this.props} />;
       case 'course_reading_view':
+        console.log('here got to reading view');
         return <CourseReadingView {...this.props} />;
       case 'course_quiz_view':
-      case 'course_quiz_question_container':
       case 'course_quiz_question_view':
-      case 'course_quiz_status_container':
-      case 'course_quiz_start_view':
-      case 'course_quiz_final_screen':
+        console.log('here got to quiz view');
         return <CourseQuizView {...this.props} />;
       default:
         return <CourseInfoView {...this.props} />;
