@@ -1,6 +1,4 @@
 const React = require('react');
-const CoursesViewContainer = require('./components/CoursesViewContainer.react');
-const firebase = require('firebase');
 const NavBar = require('./components/NavBar.react');
 const Home = require('./components/Home.react');
 const CoursesView= require('./components/CoursesView.react');
@@ -8,6 +6,8 @@ const CoursesView= require('./components/CoursesView.react');
 const ActionTypes = require('./ActionTypes');
 
 const FirebaseTest = require('./components/FirebaseTest.react');
+const CourseQuizQuestionViewer = require('./components/CourseQuizQuestionViewer.react');
+
 
 const styles = require('./components/style.css');
 
@@ -44,6 +44,7 @@ class App extends React.Component {
           <CoursesView {...this.props} callAction={this.callAction.bind(this)} />
         );
       case 'firebaseTest':
+      console.log('here');
       return (
           <FirebaseTest />
         );
@@ -54,12 +55,8 @@ class App extends React.Component {
     return (
       <div>
         <NavBar {...this.props} callAction={this.callAction.bind(this)} />
-        { this.renderContent() }
-        {/* <CoursesView callAction={this.callAction.bind(this)} {...this.props} /> */}
-        {/* <button
-          onClick={() => {
-            console.log(ActionTypes.COURSE_INFO_VIEW); this.callAction(ActionTypes.COURSE_INFO_VIEW, 'dasjhaskkj')}}
-        >hey there</button> */}
+        { /*this.renderContent()*/ }
+        <CourseQuizQuestionViewer {...this.props} questionTitle={"Here is a title"} answers={["one", "two"]}/>
       </div>
 
     );

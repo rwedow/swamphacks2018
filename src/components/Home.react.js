@@ -8,15 +8,15 @@ class Home extends React.Component {
       super(props);
     }
 
-    buttonOnClick() {
-      console.log('this is', this);
+    learnButtonOnClick() {
+     console.log('this is', this);
+     document.querySelector('.learn').scrollIntoView({
+       behavior: 'smooth'
+     });
     }
 
-    learnButtonOnClick() {
+    buttonOnClick() {
       console.log('this is', this);
-      document.querySelector('.learn').scrollIntoView({ 
-        behavior: 'smooth' 
-      });
     }
 
     render() {
@@ -35,13 +35,13 @@ class Home extends React.Component {
           <div className="centerButton">
             <Button text="Take the Quiz" style="centerButton" onClick={() => {this.props.callAction(ActionTypes.COURSE_QUIZ_VIEW, "some_course")}} />
           </div>
-          
+
           <div className="discreteButton">
             <Button text="Learn More" style="discreteButton" onClick={this.learnButtonOnClick} />
           </div>
 
           <div id="end" className="learn">
-            <h2>Lorem Ispum blah blah</h2>
+           <h2>Lorem Ispum blah blah</h2>
           </div>
 
         </div>
