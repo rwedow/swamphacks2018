@@ -1,9 +1,13 @@
 const React = require('react');
+const CoursesViewContainer = require('./components/CoursesViewContainer.react');
+const firebase = require('firebase');
 const NavBar = require('./components/NavBar.react');
 const Home = require('./components/Home.react');
 const CoursesView= require('./components/CoursesView.react');
 
 const ActionTypes = require('./ActionTypes');
+
+const FirebaseTest = require('./components/FirebaseTest.react');
 
 const styles = require('./components/style.css');
 
@@ -19,6 +23,7 @@ class App extends React.Component {
     let oppa = this.state.a ? 0 : 1;
     this.setState({"a": oppa});
   }
+
 
   renderContent() {
     console.log('load app.react', this.props.store.getState());
@@ -38,6 +43,10 @@ class App extends React.Component {
         return (
           <CoursesView {...this.props} callAction={this.callAction.bind(this)} />
         );
+      case 'firebaseTest':
+      return (
+          <FirebaseTest />
+        );
     }
   }
 
@@ -52,6 +61,7 @@ class App extends React.Component {
             console.log(ActionTypes.COURSE_INFO_VIEW); this.callAction(ActionTypes.COURSE_INFO_VIEW, 'dasjhaskkj')}}
         >hey there</button> */}
       </div>
+
     );
   }
 }

@@ -12,6 +12,13 @@ class Home extends React.Component {
       console.log('this is', this);
     }
 
+    learnButtonOnClick() {
+      console.log('this is', this);
+      document.querySelector('.learn').scrollIntoView({ 
+        behavior: 'smooth' 
+      });
+    }
+
     render() {
       document.title = "Home";
       return (
@@ -30,8 +37,13 @@ class Home extends React.Component {
           </div>
           
           <div className="discreteButton">
-            <Button text="Learn More" style="discreteButton" onClick={this.buttonOnClick} />
+            <Button text="Learn More" style="discreteButton" onClick={this.learnButtonOnClick} />
           </div>
+
+          <div id="end" className="learn">
+            <h2>Lorem Ispum blah blah</h2>
+          </div>
+
         </div>
       );
     }
