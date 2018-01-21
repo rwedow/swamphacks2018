@@ -1,5 +1,6 @@
 const React = require('react');
 const Button = require('./Button.react');
+const CoursesListView = require('./CoursesListView.react');
 
 class Home extends React.Component {
     constructor(props) {
@@ -23,7 +24,11 @@ class Home extends React.Component {
         <div>
           <div className="webHeader">
             <div className="bigTitle">
-              <h1>Get to know your <span>finances</span></h1>
+              <h1 class="relative">
+                <span class="normal-title ">Get to know your</span>
+                <span class="highlight"></span>
+                <span class="highlight-title"> finances</span>
+              </h1>
             </div>
           </div>
           <div className="subTitle">
@@ -40,6 +45,10 @@ class Home extends React.Component {
 
           <div id="end" className="learn">
             <h2>Lorem Ispum blah blah</h2>
+          </div>
+
+          <div>
+            {/* <CoursesListView /> */}
           </div>
 
         </div>
